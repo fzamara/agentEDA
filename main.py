@@ -323,11 +323,12 @@ class DataAnalysisAgent:
             self.chain = None
             self.prompt = ChatPromptTemplate.from_template(
                 """
-                Você é um especialista em análise de dados (modo offline).
+                Você é um especialista em análise de dados.
                 Dataset carregado com {rows} linhas e {cols} colunas.
                 Colunas disponíveis: {columns}.
                 Pergunta do usuário: {question}
-                Responda de forma detalhada, trazendo possíveis análises, estatísticas e insights.
+                Responda de forma detalhada, conheca os dados e traga possíveis análises, estatísticas e insights.
+                Respostas somente sobre os dados fornecidos.
                 """
             )
             logger.warning("LLM não inicializado. Agente pronto em modo offline.")
